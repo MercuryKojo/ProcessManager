@@ -94,9 +94,9 @@ class Maintenance
 
             $mail->setBodyHtml($html);
 
-            $recipients = array_filter(explode(';',$config['email']['recipients']));
+            $recipients = array_filter($config['email']['recipients']);
 
-            if ($recipients) {
+            if (!empty($recipients)) {
 
                 foreach($recipients as $emailAdr){
                     $mail->addTo($emailAdr);
