@@ -608,7 +608,7 @@ class MonitoringItem extends \Pimcore\Model\AbstractModel
                 return $minutes.'m '.$seconds.'s';
             }
 
-            return gmdate('h', $took).'h '.gmdate('i', $took).'m '.gmdate('s', $took).'s';
+            return floor($took/3600).'h '.gmdate('i', $took).'m '.gmdate('s', $took).'s';
         }
     }
 
